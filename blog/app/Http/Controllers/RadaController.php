@@ -14,6 +14,6 @@ class RadaController extends Controller
         $rada->raja_nimi=$req->raja_nimi;
         $rada->raja_asukoht=$req->raja_asukoht;
         $rada->save();
-        return redirect('add');
+        return redirect('list');
     }
 }

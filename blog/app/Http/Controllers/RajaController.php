@@ -12,15 +12,4 @@ class RajaController extends Controller
         return view('list', ['rajad'=>$data]);
     }
 
-    function delete($id) {
-        $data = Raja::all();
-        $data=Raja::find($id);
-        $data->delete();
-        return redirect()->to('/list');
-    }
-
-    function showData($id) {
-        return Raja::find($id);
-
-    }
 }

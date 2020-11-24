@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RajaController;
 use App\Http\Controllers\RadaController;
+use App\Http\Controllers\MemberController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('list', [RajaController::class,'show']);
+
 
 Route::view('add', 'addrada');
 
 Route::post('add', [RadaController::class, 'addData']);
 
-Route::get('delete/{$id}', [RajaController::class, 'delete'])->name('delete');
-Route::get('edit/{$id}', [RajaController::class, 'showData']);
 
+
+Route::get('list', [MemberController::class,'list']);
+Route::get('delete/{id}', [MemberController::class,'delete']);
+Route::get('edit/{id}', [MemberController::class,'showData']);
+Route::post('edit/', [MemberController::class, 'update']);
