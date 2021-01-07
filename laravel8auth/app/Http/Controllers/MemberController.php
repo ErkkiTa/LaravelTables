@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Raja;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MemberController extends Controller
 {
@@ -28,11 +29,18 @@ class MemberController extends Controller
 
     function update(Request $req) 
     {
-        $data=Raja::find($req->id);
-        $data->raja_nimi=$req->raja_nimi;
-        $data->raja_asukoht=$req->raja_asukoht;
-        $data->save();
-        return redirect('dashboard/rajad');
-        return $req->input();
+
+        $post = Raja::find($req->id);
+        if(Auth::id() == $post->author_id) {
+            $data=Raja::find($req->id);
+            $data->raja_nimi=$req->raja_nimi;
+            $data->raja_asukoht=$req->raja_asukoht;
+            $data->save();
+            return redirect('rajad');
+            return $req->input();
+        } else {
+            return view('dashboard');
+        }
+        
     }
 }

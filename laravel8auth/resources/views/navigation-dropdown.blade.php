@@ -19,7 +19,13 @@
                         {{ __('Rajad') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('addrada') }}" :active="request()->routeIs('addrada')">
-                        {{ __('Lisa') }}
+                        {{ __('Lisa rada') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('andur') }}" :active="request()->routeIs('andur')">
+                        {{ __('Andurid') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('addandur') }}" :active="request()->routeIs('andurilisa')">
+                        {{ __('Andurite lisamine') }}
                     </x-jet-nav-link>
                     
                 </div>
