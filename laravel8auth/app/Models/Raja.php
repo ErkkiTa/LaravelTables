@@ -10,4 +10,9 @@ class Raja extends Model
     use HasFactory;
     public $timestamps=false;
     protected $table = 'rajas';
+
+    public function andurid()
+    {
+        return $this->hasMany(Anduri::class);
+    }
 }

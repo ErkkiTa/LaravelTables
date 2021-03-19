@@ -27,7 +27,6 @@
                     <x-jet-nav-link href="{{ route('addandur') }}" :active="request()->routeIs('andurilisa')">
                         {{ __('Andurite lisamine') }}
                     </x-jet-nav-link>
-                    
                 </div>
             </div>
 

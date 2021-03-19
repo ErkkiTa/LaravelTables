@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
             <h1>Muuda andurit</h1>
-                <form action="dashboard/andur/editandur/" method="POST">
+                <form action="dashboard/andur/editandur" method="POST">
                     @csrf
                         <input type="hidden" name="id" value="{{$data['id']}}">
                         <input type="text" name="id" value="{{$data['id']}}"><br> <br>

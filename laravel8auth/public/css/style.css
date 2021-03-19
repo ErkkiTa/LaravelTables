@@ -10,11 +10,9 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Arimo';font-size: 1rem;
   }
   
-
-
-  /* Style the search field */
   form.otsing input[type=text] {
     padding: 10px;
     font-size: 17px;
@@ -24,7 +22,6 @@
     background: #f1f1f1;
   }
   
-  /* Style the submit button */
   form.otsing button {
     float: left;
     width: 20%;
@@ -33,15 +30,14 @@
     color: white;
     font-size: 17px;
     border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
+    border-left: none; 
     cursor: pointer;
   }
   
   form.otsing button:hover {
     background: #0b7dda;
   }
-  
-  /* Clear floats */
+
   form.otsing::after {
     content: "";
     clear: both;
@@ -53,20 +49,65 @@
 }
 
 
-.box1 .box2 .box3 .box4 {
-width:900px; 
-height:600px;
-}
 
 .row {
-    display: flex;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.column {
+  flex: 25%;
+  padding: 20px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .column {
+    flex: 50%;
   }
+}
+
+
+@media screen and (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+.andurid {
+  display:flex;
+  flex-direction: row;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.raja-tegevused {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-raja-nimi {
+  padding: 15px;
+  text-align: left;
+}
+
+.container-dropdown {
+  padding: 15px;
+}
+
+.anduri-drop {
+  border: 1px solid black;
   
-  .row div {
-    width: 50%;
-  }
-  
-  .noMargin {
-    margin: 0px;
-  }
+  font-size: 15px;
+}
+
+.andur-lisa {
+  margin-left:15px;
+}

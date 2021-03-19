@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnduriController;
+use App\Http\Controllers\DynamicDependent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\RadaController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\Kaamerad;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Anduri;
+
 
 
 /*
@@ -24,10 +26,12 @@ use App\Models\Anduri;
 */
 
 Route::get('/', function () {
-    $data = Anduri::all();
-    return view('welcome', ['andurid'=>$data]);
-    
+    $data = Raja::all();
+    return view('welcome', ['rajad'=>$data]);
+
 });
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -50,7 +54,7 @@ Route::get('andurid', [AnduriController::class,'show2']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/addrada', function () {
     return view('addrada');
-     
+
 })->name('addrada');
 
 Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/addrada', [RadaController::class, 'addData']);
@@ -70,9 +74,20 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/andurilisa', [
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/andur', [AnduriController::class, 'show'])->name('andur');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/andur/delete/{id}', [AnduriController::class, 'delete']);
 
-//Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/andur/edit/{id}', [AnduriController::class, 'update']);
-Route::post('dashboard/andur/editandur/', [AnduriController::class, 'update']);
-Route::get('dashboard/andur/editandur/{id}', [AnduriController::class, 'showData']);
+Route::get('dashboard/delete/{id}', [AnduriController::class,'delete']);
 
+Route::get('dashboard/editandur/{id}', [AnduriController::class,'showData']);
+
+Route::get('dashboard/editandur/', [AnduriController::class,'update']);
+
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rajad/liitmine/{id}', [RajaController::class,'lisa'])->name('lisaandur');
+Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/rajad/liitmine/', [RajaController::class,'attach']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard/rajad/liitmine', [DynamicDependent::class, 'index']);
+
+
+Route::get('radade/{id}', [RajaController::class,'raja']);
+
+Route::get('radade/', [DynamicDependent::class,'rajad']);

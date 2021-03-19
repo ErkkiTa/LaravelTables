@@ -10,4 +10,9 @@ class Anduri extends Model
     use HasFactory;
     public $timestamps=false;
     protected $table = 'anduris';
+
+    public function rada()
+    {
+        return $this->belongsTo(Raja::class, 'raja_id');
+    }
 }

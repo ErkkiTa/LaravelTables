@@ -36,7 +36,7 @@ class MemberController extends Controller
             $data->raja_nimi=$req->raja_nimi;
             $data->raja_asukoht=$req->raja_asukoht;
             $data->save();
-            return redirect('rajad');
+            return redirect('dashboard/rajad');
             return $req->input();
         } else {
             return view('dashboard');

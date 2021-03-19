@@ -46,18 +46,12 @@ class AnduriController extends Controller
     
     function update(Request $req) 
     {
-
-        $post = Anduri::find($req->id);
-        if(Auth::id() == $post->author_id) {
-            $data=Anduri::find($req->id);
-            $data->anduri_nimi=$req->anduri_nimi;
-            $data->anduri_asukoht=$req->anduri_asukoht;
-            $data->save();
-            return redirect('andur');
-            return $req->input();
-        } else {
-            return view('dashboard');
-        }
+        $data=Anduri::find($req->id);
+        $data->id=$req->id;
+        $data->anduri_nimi=$req->anduri_nimi;
+        $data->anduri_asukoht=$req->anduri_asukoht;
+        $data->save();
+        return redirect('andurid');
         
     }
 }
