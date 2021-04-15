@@ -12,21 +12,21 @@
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-success sticky-top">
   <a class="navbar-brand" href="/"> <img src="{{asset('img/etr.png')}}" width="100" height="40" class="d-inline-block align-top"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/rada">Rajad</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/kaamerad">Kaamerad</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/andurid">Andurid</a>
+        <a class="nav-link active" href="/andurid">Andurid</a>
       </li>
     </ul>  
   </div>

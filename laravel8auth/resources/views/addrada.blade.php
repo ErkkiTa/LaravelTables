@@ -3,6 +3,13 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Lisa rada') }}
         </h2>
+        <style type="text/css">
+            @font-face {
+                font-family: Arimo;
+                src: url('fonts/Arimo.ttf');
+                    }
+        </style>
+        
     </x-slot>
 
     <div class="py-12">

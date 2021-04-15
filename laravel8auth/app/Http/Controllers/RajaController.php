@@ -4,26 +4,25 @@ namespace App\Http\Controllers;
 use App\Models\Raja;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Models\Anduri;
 
 class RajaController extends Controller
 {
 
-    function delete($id)
+    public function delete($id)
     {
         $data=Raja::find($id);
         $data->delete();
         return redirect('dashboard/rajad');
     }
 
-    function showData($id)
+    public function showData($id)
     {
         $data= Raja::find($id);
         return view('dashboard/rajad/edit', ['data'=>$data]);
     }
 
-    function update(Request $req)
+    public function update(Request $req)
     {
 
         $post = Raja::find($req->id);
@@ -40,7 +39,7 @@ class RajaController extends Controller
 
     }
 
-    function lisa($id)
+    public function lisa($id)
     {
         $data = Raja::find($id);
         $andurid = Anduri::doesntHave('rada')->get();
@@ -50,7 +49,7 @@ class RajaController extends Controller
         ]);
     }
 
-    function raja($id)
+    public function raja($id)
     {
         $data = Raja::find($id);
         $andurid = Anduri::get();
@@ -69,5 +68,10 @@ class RajaController extends Controller
         $andur->save();
 
         return redirect()->route('lisaandur', $track->id);
+    }
+
+
+    public function detach() {
+        /*Vaja nullida ära andmebaasist raja_id value ja siis refreshida ja siis ilmub tagasi see*/ 
     }
 }

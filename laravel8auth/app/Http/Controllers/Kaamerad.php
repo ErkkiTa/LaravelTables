@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Kaamerad extends Controller
 {
-    function leht() {
+    public function leht() {
         return view('kaamerad');
     }
 }

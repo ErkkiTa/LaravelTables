@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class AnduriController extends Controller
 {
-    function show() {
+    public function show() {
         $data = Anduri::all();
         return view('andur', ['andurid'=>$data]);
     }
 
-    function addAndur(Request $req)
+    public function addAndur(Request $req)
     {
         $andurid= new Anduri;
         $andurid->id=$req->id;
@@ -24,27 +24,26 @@ class AnduriController extends Controller
         return redirect('dashboard/andur');
     }
 
-    function show2() {
+    public function show2() {
         $data = Anduri::all();
         return view('andurid', ['andurid'=>$data]);
     }
 
-    function delete($id) 
+    public function delete($id) 
     {
         $data=Anduri::find($id);
         $data->delete();
         return redirect('dashboard/andur');
     }
 
-
-    function showData($id)
+    public function showData($id)
     {
         
         $data= Anduri::find($id);
         return view('editandur', ['data'=>$data]);
     }
     
-    function update(Request $req) 
+    public function update(Request $req) 
     {
         $data=Anduri::find($req->id);
         $data->id=$req->id;

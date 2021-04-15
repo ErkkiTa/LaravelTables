@@ -14,9 +14,5 @@ class Rajad
      * @param  \Closure  $next
      * @return mixed
      */
-    public function list() 
-    {
-        $data = Raja::all();
-        return view('rajad', ['rajad'=>$data]);
-    }
+    
 }

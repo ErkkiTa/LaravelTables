@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class RadaController extends Controller
 {
-    function addData(Request $req)
+    public function addData(Request $req)
     {
         $rada= new Raja;
         $rada->id=$req->id;

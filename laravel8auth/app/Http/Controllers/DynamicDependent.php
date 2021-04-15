@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\Anduri;
 use App\Models\Raja;
-
 use Illuminate\Http\Request;
 
 class DynamicDependent extends Controller
 {
-    function index()
+    
+    public function index()
     {
      $anduri_nimi = Anduri::table('anduris')
          ->groupBy('anduri_nimi')
@@ -16,7 +16,7 @@ class DynamicDependent extends Controller
      return view('liitmine')->with('anduri_nimi', $anduri_nimi);
     }
 
-    function rajad() {
+    public function rajad() {
         $raja_nimi = Raja::table('rajas')
         ->groupBy('raja_nimi')
         ->get();

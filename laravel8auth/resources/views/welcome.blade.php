@@ -11,7 +11,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <title>Laravel</title>
+        <title>Terviserajad</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
         </style>
     </head>
     <body class="antialiased">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-success">
   <a class="navbar-brand" href="#"> <img src= "{{asset('img/etr.png')}}" width="100" height="70" class="d-inline-block align-top"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -67,21 +67,10 @@
                 <h1>Levinumad kaamerad</h1>
             </div>
 
-                    <div class="container">
-                        <div class="row">
-
-                            <div class="column" style="background-color:#aaa;">
-                              <h1 style="text-align: center; font-size: 17px;">Kaamera nimi</h1>
-                              <iframe src="https://g2.ipcamlive.com/player/player.php?alias=5e0f764970dff&autoplay=1" frameborder="0" scrolling="no" width="400px" height="250px"></iframe>
-                            </div>
-                              
-                            <div class="column" style="background-color:#aaa;">
-                              <h1 style="text-align: center; font-size: 17px;">Kaamera nimi</h1>
-                              <iframe src="https://g2.ipcamlive.com/player/player.php?alias=5ddab40795152&autoplay=1" frameborder="0" scrolling="no" width="400px" height="250px"></iframe>
-                            </div>
-
-                        </div>
-                    </div>
+            <section class="content-2">
+                <iframe class="kaamera-3" src="https://g2.ipcamlive.com/player/player.php?alias=5e0f764970dff&autoplay=1" frameborder="0" scrolling="no"></iframe>
+                <iframe class="kaamera-3" src="https://g2.ipcamlive.com/player/player.php?alias=5ddab40795152&autoplay=1" frameborder="0" scrolling="no"></iframe>
+            </section>
 
           <table class="w-full table-auto">
              <tbody class="text-sm">

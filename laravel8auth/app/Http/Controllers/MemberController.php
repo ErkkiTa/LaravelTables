@@ -7,13 +7,13 @@ use Illuminate\Support\Facades\Auth;
 
 class MemberController extends Controller
 {
-    function list() 
+    public function list() 
     {
         $data = Raja::all();
         return view('rajad', ['rajad'=>$data]);
     }
 
-    function delete($id) 
+    public function delete($id) 
     {
         
         $data=Raja::find($id);
@@ -21,13 +21,13 @@ class MemberController extends Controller
         return redirect('dashboard/rajad');
     }
 
-    function showData($id) 
+    public function showData($id) 
     {
         $data= Raja::find($id);
         return view('edit', ['data'=>$data]);
     }
 
-    function update(Request $req) 
+    public function update(Request $req) 
     {
 
         $post = Raja::find($req->id);

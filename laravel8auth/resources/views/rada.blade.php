@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rajad</title>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
   <a class="navbar-brand" href="/"> <img src="{{asset('img/etr.png')}}" width="100" height="40" class="d-inline-block align-top"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -31,25 +32,27 @@
   </div>
 </nav>
 
-<h1>Radade list</h1>
+<h1 style="text-align: center;">Radade list</h1>
 
-<table border="1"> 
-<tr>
-    <td>ID</td>
-    <td>Raja nimi</td>
-    <td>Raja asukoht</td> <br>
-</tr>
-@foreach ($rajad as $item)
-<tr> 
-    <td>{{$item->id}}</td>
-    <td>{{$item->raja_nimi}}</td>
-    <td>{{$item->raja_asukoht}}</td>
-</tr>
+<div class="track-container">
+  <table border="1"> 
+    <tr >
+        <td style="font-size: 20px;">ID</td>
+        <td style="font-size: 20px;">Raja nimi</td>
+        <td style="font-size: 20px;">Raja asukoht</td> <br>
+    </tr>
+    @foreach ($rajad as $item)
 
+    <tr> 
+        <td style="font-size: 20px;">{{$item->id}}</td>
+        <td style="font-size: 20px;">{{$item->raja_nimi}}</td>
+        <td style="font-size: 20px;">{{$item->raja_asukoht}}</td>
+    </tr>
 
-@endforeach
-</table>
- 
+    @endforeach
+  </table>
+
+</div>
 </body>
 </html>
 
